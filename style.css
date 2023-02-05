@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+  font-size: 14px;
+  --violet: hsl(263, 55%, 52%);
+  --gray-blue: hsl(217, 19%, 35%);
+  --black-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-gray-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--light-gray-blue);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  margin: 25px 0;
+  gap: 15px;
+}
+
+section {
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 12px 15px 20px hsl(210, 30%, 85%);
+}
+
+.sec01 {
+  background-color: var(--violet);
+  color: white;
+  background-image: url('/images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+  grid-area: sec-1;
+}
+
+.sec02 {
+  background-color: var(--gray-blue);
+  color: white;
+  grid-area: sec-2;
+}
+
+.sec03 {
+  background-color: var(--white);
+  color: var(--gray-blue);
+  grid-area: sec-3
+}
+
+.sec04 {
+  background-color: var(--black-blue);
+  color: var(--white);
+  grid-area: sec-4;
+}
+
+.sec05 {
+  background-color: var(--white);
+  color: var(--gray-blue);
+  grid-area: sec-5;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sec01 .profile img,
+.sec04 .profile img {
+  border: 2px solid hsl(263, 55%, 62%);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.graduate {
+  opacity: 50%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.review {
+  opacity: 70%;
+  line-height: 18px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-areas: 
+    "sec-1 sec-1"
+    "sec-2 sec-3"
+    "sec-4 sec-4"
+    "sec-5 sec-5";
+  }
+}
+
+@media (min-width: 1100px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    grid-template-areas:
+    "sec-1 sec-1 sec-2 sec-5"
+    "sec-3 sec-4 sec-4 sec-5";
+    width: 80%;
+    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  section {
+    padding: 25px;
+  }
+}
